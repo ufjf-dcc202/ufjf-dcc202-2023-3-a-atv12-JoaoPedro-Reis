@@ -17,8 +17,32 @@ export function getEstoque(){
 
 export function transacao(origem, destino, quantidade, fruta){
     if(origem === 'pomar'){
-        estoque[destino][0].qtd += quantidade;
+        const pessoa = estoque[destino];
+        let monte;
+        for(let i = 0; i<pessoa.length; i++){
+            if(pessoa[i].tipo === fruta){
+                monte = pessoa[i];
+                break;
+            }
+        }
+            if(!monte){
+                monte = {'tipo': fruta, 'qtd':0}
+                pessoa.push(monte);
+            }
+            monte.qtd += quantidade;
+            return;
+        }
+        if(destino === 'pomar'){
+            const pessoa = estoque[destino];
+        let monte;
+        for(let i = 0; i<pessoa.length; i++){
+            if(pessoa[i].tipo === fruta){
+                monte = pessoa[i];
+                break;
+            }
+        }
 
     }
-
 }
+
+

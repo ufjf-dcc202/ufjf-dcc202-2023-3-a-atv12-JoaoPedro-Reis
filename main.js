@@ -1,6 +1,6 @@
 //main.js
 
-import { getEstoque, transacao } from "./estoque";
+import { getEstoque, transacao } from "./estoque.js";
 
 document.entrada.addEventListener('submit', leFormulario);
 
