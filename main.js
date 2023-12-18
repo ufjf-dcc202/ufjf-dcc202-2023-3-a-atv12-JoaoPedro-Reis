@@ -21,11 +21,12 @@ function leFormulario(event) {
     const origem = document.entrada.origem.value;
     const destino = document.entrada.destino.value;
 
-    console.log('${origem} doa ${quantidade} ${fruta} para ${destino}');
+    console.log(`${origem} doa ${quantidade} ${fruta} para ${destino}`);
 
     transacaoNoEstoque(origem, destino, fruta, quantidade);
     atualizaTela();
 }
+
 
 function preencheLista(lista, estoqueDaPessoa) {
     lista.textContent = "";
@@ -33,10 +34,11 @@ function preencheLista(lista, estoqueDaPessoa) {
     for (let i = 0; i < estoqueDaPessoa.length; i++) {
         const monte = estoqueDaPessoa[i];
         const li = document.createElement('li');
-        li.textContent = '${monte.tipo}: ${monte.quantidade}';
+        li.textContent = `${monte.tipo}: ${monte.quantidade}`;
         lista.appendChild(li);
     }
 }
+
 
 function atualizaTela() {
     const estoque = getEstoque();
